@@ -6,7 +6,7 @@ php:
   - 5.5
 
 before_script:
-	- cp config.yml.dist config.yml
+    - cp config.yml.dist config.yml
     - curl -s http://getcomposer.org/installer | php
     - php composer.phar install
 
