@@ -1,0 +1,23 @@
+settings:
+    buzz:
+        curl_timeout: 15
+credentials:
+    github:
+        username: username
+        token: token
+    hipchat:
+        token: token
+        room: Room
+        from: Metrics Game
+    bitbucket:
+        username: test
+        password: test
+repositories:
+    github:
+        my_username:
+            - repository1
+            - repository2
+    bitbucket:
+        my_username:
+            - repository1
+            - repository2

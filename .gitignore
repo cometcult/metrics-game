@@ -1,0 +1,5 @@
+vendor
+bin
+config.yml
+composer.phar
+composer.lock

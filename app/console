@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+
+require_once 'vendor/autoload.php';
+
+use TheCometCult\Console\MetricsApplication;
+
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\Yaml\Yaml;
+
+$configDirectories = array(__DIR__ . '/..');
+$locator = new FileLocator($configDirectories);
+$path = $locator->locate('config.yml', null, true);
+
+$config = Yaml::parse($path);
+
+$application = new MetricsApplication();
+$application->configure($config);
+$application->run();

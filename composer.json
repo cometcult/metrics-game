@@ -1,0 +1,22 @@
+{
+    "name": "cometcult/metrics-game",
+    "description": "Gamification of the amount of commits contributed to a repository",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/console": "dev-master",
+        "hipchat/hipchat-php": "dev-master",
+        "knplabs/github-api": "dev-master",
+        "gentle/bitbucket-api": "dev-master",
+        "symfony/config": "2.5.*@dev",
+        "symfony/dependency-injection": "2.5.*@dev"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "dev-master"
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}
