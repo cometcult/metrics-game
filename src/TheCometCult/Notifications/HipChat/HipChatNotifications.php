@@ -36,7 +36,8 @@ class HipChatNotifications implements NotificationsSenderInterface
 
     protected function getWinnerMessage($metrics)
     {
-        $max = reset(array_values($metrics));
+        $numberOfCommits = array_values($metrics);
+        $max = reset($numberOfCommits);
 
         if ($max === 0) {
             return 'No winners today :(<br/>';
@@ -49,7 +50,9 @@ class HipChatNotifications implements NotificationsSenderInterface
 
             return 'The winners are: <b>' . $winners . '!</b><br/>';
         } else {
-            return 'The Winner Is: <b>' . reset(array_keys($metrics)) . '!</b><br/>';
+            $winners = array_keys($metrics);
+
+            return 'The Winner Is: <b>' . reset($winners) . '!</b><br/>';
         }
     }
 }
