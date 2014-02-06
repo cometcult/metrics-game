@@ -17,7 +17,7 @@ cp config.yml.dist config.yml
 # supply your settings in config.yml
 curl -s http://getcomposer.org/installer | php
 php composer.phar install
-``
+```
 
 Running
 -------
