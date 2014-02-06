@@ -1,6 +1,8 @@
 MetricsGame
 ===========
 
+[![Build Status](https://travis-ci.org/cometcult/metrics-game.png?branch=master)](https://travis-ci.org/cometcult/metrics-game)
+
 Gamify your git experience!
 
 ![Sample output on HipChat](https://dl.dropboxusercontent.com/u/757052/game-metrics.png)
