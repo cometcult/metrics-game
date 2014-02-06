@@ -1,6 +1,7 @@
 {
     "name": "cometcult/metrics-game",
     "description": "Gamification of the amount of commits contributed to a repository",
+    "keywords": ["hipchat", "github", "bitbucket", "game", "api", "notification", "team", "metrics"],
     "autoload": {
         "psr-0": { "": "src/" }
     },
