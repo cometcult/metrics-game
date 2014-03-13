@@ -25,9 +25,11 @@ class HipChatNotifications implements NotificationsSenderInterface
     {
         arsort($metrics);
         $message = $this->getWinnerMessage($metrics);
-        $message .= 'Number of commits from last 24h:<br/>';
-        foreach ($metrics as $userName => $commits) {
-            $message .= $userName . ' = ' . $commits . '<br/>';
+        if (count($metrics)) {
+            $message .= 'Number of commits from last 24h:<br/>';
+            foreach ($metrics as $userName => $commits) {
+                $message .= $userName . ' = ' . $commits . '<br/>';
+            }
         }
         $message .= '<b>The Game is on Biatch!</b>';
 
@@ -39,7 +41,7 @@ class HipChatNotifications implements NotificationsSenderInterface
         $numberOfCommits = array_values($metrics);
         $max = reset($numberOfCommits);
 
-        if ($max === 0) {
+        if (!$max) {
             return 'No winners today :(<br/>';
         }
 
