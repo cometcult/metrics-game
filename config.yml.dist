@@ -9,9 +9,14 @@ credentials:
         token: token
         room: Room
         from: Metrics Game
+    slack:
+        endpoint: http://your.slack.integration.webhook.endpoint/
+        room: #channelname
+        from: Metrics Game
     bitbucket:
-        username: test
-        password: test
+        oauth1:
+            key: oauth_consumer_key
+            secret: oauth_consumer_secret
 repositories:
     github:
         my_username:

@@ -7,12 +7,13 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/console": "dev-master",
-        "hipchat/hipchat-php": "dev-master",
-        "knplabs/github-api": "dev-master",
-        "gentle/bitbucket-api": "dev-master",
-        "symfony/config": "2.5.*@dev",
-        "symfony/dependency-injection": "2.5.*@dev"
+        "symfony/console": "^2.7",
+        "knplabs/github-api": "^1.5",
+        "gentle/bitbucket-api": "^0.7.0",
+        "symfony/config": "^2.7",
+        "symfony/dependency-injection": "^2.7",
+        "maknz/slack": "^1.7",
+        "hipchat/hipchat-php": "^1.4"
     },
     "require-dev": {
         "phpspec/phpspec": "dev-master"

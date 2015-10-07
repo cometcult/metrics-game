@@ -69,13 +69,27 @@ class DevMetricsCommand extends Command
         $output->writeln('<comment>Sending metrics notifications</comment>');
 
         try {
-            $hipChatNotifications = $this->container->get('notifications.hipchat');
-            $hipChatNotifications->send($results, array(
-                'room' => $this->configuration['credentials']['hipchat']['room'],
-                'from' => $this->configuration['credentials']['hipchat']['from'],
-            ));
+            if ($this->container->has('notifications.hipchat')) {
+                $hipChatNotifications = $this->container->get('notifications.hipchat');
+                $hipChatNotifications->send($results, array(
+                    'room' => $this->configuration['credentials']['hipchat']['room'],
+                    'from' => $this->configuration['credentials']['hipchat']['from'],
+                ));
+            }
         } catch (\Exception $e) {
             $output->writeln(sprintf('<error>HipChat error occured: %s</error>', $e->getMessage()));
+        }
+
+        try {
+            if ($this->container->has('notifications.slack')) {
+                $slackNotifications = $this->container->get('notifications.slack');
+                $slackNotifications->send($results, array(
+                    'room' => $this->configuration['credentials']['slack']['room'],
+                    'from' => $this->configuration['credentials']['slack']['from'],
+                ));
+            }
+        } catch (\Exception $e) {
+            $output->writeln(sprintf('<error>Slack error occured: %s, res: %s</error>', $e->getMessage()));
         }
 
         $output->writeln('<info>Metrics Done!</info>');
